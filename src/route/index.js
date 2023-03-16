@@ -330,7 +330,6 @@ router.get('/person', function (req, res) {
     },
   })
 })
-
 // ================================================================
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer

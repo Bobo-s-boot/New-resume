@@ -10,7 +10,7 @@ var header = {
     lastname: 'Ivanov',
   },
   position: 'Junior Fullstack JS Developer',
-  address: 'Україна, м. Київ, вул. Банкова, 11.',
+  address: 'Україна, м. Харків, вул. Гуроїв України.',
   salary: '600$ в місяць',
 }
 
@@ -75,9 +75,9 @@ router.get('/skills', function (req, res) {
 
     main: {
       hobbies: [
-        { name: 'Граю в баскетбол', isMain: true },
+        { name: 'Граю в футбол', isMain: false },
         { name: 'Активний відпочинок', isMain: false },
-        { name: 'Люблю малювати', isMain: true },
+        { name: 'Люблю їсти', isMain: true },
       ],
       skills: [
         {
@@ -147,7 +147,7 @@ router.get('/educ', function (req, res) {
       ],
       educations: [
         {
-          name: 'Відкритий міжнародний університет розвитку людини «Україна»',
+          name: 'Університет імені Каразіна',
           isend: false,
         },
         {
@@ -159,11 +159,11 @@ router.get('/educ', function (req, res) {
           isend: true,
         },
         {
-          name: 'Київський університет імені Бориса Грінченка',
+          name: 'Львівська Політехніка',
           isend: true,
         },
         {
-          name: 'Київський національний економічний університет імені Вадима Гетьмана',
+          name: 'ХНУРЕ',
           isend: false,
         },
         {
@@ -220,7 +220,7 @@ router.get('/work', function (req, res) {
                   name: 'super-puper devoleper',
                 },
                 {
-                  name: 'super-puper engineer',
+                  name: 'oscar for the best computer role',
                 },
               ],
             },

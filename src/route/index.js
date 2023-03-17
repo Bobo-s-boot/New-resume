@@ -10,7 +10,7 @@ var header = {
     lastname: 'Ivanov',
   },
   position: 'Junior Fullstack JS Developer',
-  address: 'Україна, м. Харків, вул. Гуроїв України.',
+  address: 'Україна, м. Харків, вул. Гeроїв України.',
   salary: '600$ в місяць',
 }
 
@@ -235,7 +235,7 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',
+    layout: 'basic',
     page: { title: 'Resume|person' },
     person: {
       name: 'Emma Johnson',
@@ -334,7 +334,7 @@ router.get('/person', function (req, res) {
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-    layout: 'person',
+    layout: 'basic',
     page: { title: 'Resume|BIO' },
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
@@ -429,7 +429,7 @@ router.get('/bio', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-    layout: 'person',
+    layout: 'basic',
     page: { title: 'Resume|Program' },
     program: {
       excursion: {
@@ -512,7 +512,7 @@ router.get('/program', function (req, res) {
 })
 router.get('/web', function (req, res) {
   res.render('web', {
-    layout: 'person',
+    layout: 'basic',
     page: { title: 'Resume|Web' },
     web: {
       languages: [
@@ -642,6 +642,7 @@ router.get('/js', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
+    layout: 'basic',
     name: 'JavaScript',
     description:
       'JavaScript is a popular high-level, dynamic, and interpreted programming language.',

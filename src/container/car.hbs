@@ -1,0 +1,96 @@
+<div>
+  <main>
+    <section>
+      <div>
+        <h1>Car</h1>
+        <ul>
+          <li>
+            {{make}},
+            {{model}}-
+            {{year}}-
+            {{color}}
+          </li>
+        </ul>
+      </div>
+    </section>
+    <br />
+
+    <section>
+      <h2>Features-Interior</h2>
+      {{#with features}}
+        {{#with interior}}
+          <div>
+            <ul>
+              {{#with seats}}
+                <li>
+                  material:{{material}}
+                </li>
+                <li>
+                  color:{{color}}
+                </li>
+                <li>
+                  heated:
+                  {{heated}}
+                </li>
+                <li>
+                  ventilated:
+                  {{ventilated}}
+                </li>
+              {{/with}}
+            </ul>
+          </div>
+        {{/with}}
+      {{/with}}
+    </section>
+    <br />
+
+    <section>
+      <h3>Engine</h3>
+      <div>
+        <ul>
+          {{#with engine}}
+            <li>
+              type-{{type}}
+            </li>
+            <li>
+              displacement-{{displacement}}
+            </li>
+            <li>
+              horsepower-
+              {{horsepower}}
+            </li>
+            <li>
+              torque-{{torque}}
+            </li>
+          {{/with}}
+        </ul>
+      </div>
+    </section>
+    <br />
+
+    <section>
+      <h4>Fuel_economy</h4>
+      <div>
+        <ul>
+          {{#with fuel_economy}}
+            <li>
+              city-
+              {{city}}
+            </li>
+            <li>
+              highway-
+              {{highway}}
+            </li>
+            <li>
+              combined-
+              {{combined}}
+            </li>
+          {{/with}}
+        </ul>
+      </div>
+    </section>
+    <em><a
+        href='https://auto.ria.com/uk/newauto/marka-toyota/model-camry/year-2022/'
+      >More info about car</a></em>
+  </main>
+</div>

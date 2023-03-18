@@ -1,0 +1,72 @@
+<div>
+  <main>
+    <section>
+      <div>
+        <h1>{{name}}</h1>
+      </div>
+      <br />
+      <div>
+        <h1>Users</h1>
+        <ul>
+          {{#each users}}
+            <li>
+              ID-
+              {{id}}
+            </li>
+            <li>
+              Name-{{name}}
+            </li>
+            <li>
+              Gender-
+              {{gender}}
+            </li>
+            <li>
+              Age-
+              {{age}}
+            </li>
+            <hr />
+            <h2>Friends</h2>
+            {{#each friends}}
+              <li>
+                ID-
+                {{id}}
+              </li>
+              <li>
+                Name-{{name}}
+              </li>
+              <li>
+                Gender-
+                {{gender}}
+              </li>
+              <li>
+                Age-
+                {{age}}
+              </li>
+            {{/each}}
+            <hr />
+            <h3>Members</h3>
+            {{#each members}}
+              <li>
+                ID-
+                {{id}}
+              </li>
+              <li>
+                Name-{{name}}
+              </li>
+              <li>
+                Gender-
+                {{gender}}
+              </li>
+              <li>
+                Age-
+                {{age}}
+              </li>
+            {{/each}}
+          {{/each}}
+          <p>Тут будуть з'являтись ваші нові події.Слідкуйте
+            уважно🙃</p>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>

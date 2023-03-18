@@ -1,0 +1,92 @@
+<div>
+  <main>
+    <section>
+      <div>
+        <h1>{{name}}</h1>
+      </div>
+      <div>{{description}}</div>
+      <div>{{price}}</div>
+      <div>{{category}}</div>
+    </section>
+    <hr />
+    <section>
+      <h1>Processor</h1>
+      {{#with features}}
+        <div>
+          <ul>
+            {{#with processor}}
+              <li>
+                {{brand}}
+              </li>
+              <li>
+                {{model}}
+              </li>
+              <li>
+                {{speed}}
+              </li>
+              <li>
+                {{cores}}
+              </li>
+              <li>
+                {{cache}}
+              </li>
+            {{/with}}
+          </ul>
+        </div>
+        <hr />
+        <div>
+          <h2>Memory</h2>
+          <ul>
+            {{#with memory}}
+              <li>
+                {{type}}
+              </li>
+              <li>
+                {{size}}
+              </li>
+              <li>
+                {{speed}}
+              </li>
+            {{/with}}
+          </ul>
+        </div>
+        <hr />
+        <div>
+          <h3>Storage</h3>
+          <ul>
+            {{#with storage}}
+              <li>
+                {{type}}
+              </li>
+              <li>
+                {{size}}
+              </li>
+            {{/with}}
+          </ul>
+        </div>
+        <hr />
+        <div>
+          <h4>Graphics</h4>
+          <ul>
+            {{#with graphics}}
+              <li>
+                {{brand}}
+              </li>
+              <li>
+                {{model}}
+              </li>
+              <li>
+                {{memory}}
+              </li>
+            {{/with}}
+          </ul>
+        </div>
+      {{/with}}
+    </section>
+    <hr />
+    <section>
+      <address
+      >Вул.Франка.Місто-Херсон.Магазин"АЛЛО"</address>
+    </section>
+  </main>
+</div>

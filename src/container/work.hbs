@@ -16,7 +16,7 @@
                     <li>
                         <div>{{position}}</div>
 
-                        <br>
+    
 
                         <div>
                             {{duration.from}}
@@ -27,27 +27,26 @@
                             {{/if}}
                         </div>
 
-                        <br>
+                        
 
                         <div>{{> link text=company.name href=company.url blank=true noLine=true}}</div>
-                        <br><br>
+                        
 
                         <div><strong>Projects ({{projectAmount}})</strong></div>
-                        <br>
+                        
                         <ul>
                             {{#each projects}}
                             <li>
                                 <div>{{> link text=name href=url blank=true noLine=true}}</div>
-                                <br>
                                 <div>
                                     <p>
                                         {{about}}
                                     </p>
                                 </div>
-                                <br>
+                                
                                 <div>
                                     <div><em>"Project stacks" ({{stackAmount}})</em></div>
-                                    <br>
+                                    
                                     <ul>
                                         {{#each stacks}}
                                         <li>
@@ -56,7 +55,7 @@
                                         {{/each}}
                                     </ul>
                                 </div>
-                                <br>
+                                
                                 <div>
                                     <div><em>"Project awards"</em></div>
                                     <br>

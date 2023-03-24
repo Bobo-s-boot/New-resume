@@ -3,7 +3,7 @@
     <main>
         <section>
             {{> title data='My educationss' big=true}}
-            <ul>
+            <ul class="ps-5">
                 {{#each educations}}
                 <li>{{name}}
                     {{#unless isend}} ===(ще в процесі) {{/unless }}
@@ -14,11 +14,13 @@
         </section>
         <section>
             {{> title data="My certificats" }}
+        <ul class="ps-5">
             {{#each certificates}}
             <li>{{name}}
                 <strong>- ID сертифікату ({{id}})</strong>
             </li>
             {{/each}}
+         </ul>
         </section>
     </main>
 

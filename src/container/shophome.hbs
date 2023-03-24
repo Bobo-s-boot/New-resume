@@ -186,9 +186,23 @@
   {{/each}}
   <br /> --}}
 
-  <div class='flex-column'>
-    {{#each footer}}
-      <a href='{{link}}' class='nav-link'>{{text}}</a>
-    {{/each}}
-  </div>
+  <div class="row g-5">
+
+        {{#each footer}}
+
+      <div class="col-2">
+        <ul class="nav flex-column ">
+
+            {{#each this}}
+            <li>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+            </li>
+            {{/each}}
+
+        </ul>
+      </div>
+
+        {{/each}}
+
+    </div>
 </main>

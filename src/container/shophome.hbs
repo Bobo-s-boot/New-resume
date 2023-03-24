@@ -1,0 +1,208 @@
+<main>
+  <div class='card row g-1'>
+    <div class='pt-1'>
+      <h1 class='m-0'>Show</h1>
+    </div>
+    <div class='col-12 nav nav-tabs justify-content-end'>
+      {{#with navigation}}
+        <div>
+          {{#each links}}
+            <a href='{{href}}'>{{text}}</a>
+          {{/each}}
+        </div>
+      {{/with}}
+    </div>
+  </div>
+
+  {{!-- <div class='m-3'>
+    {{#with newsBlock}}
+      <h1 class='text-center'>{{title}}</h1>
+      {{#each cards}}
+        <div class='col-4 my-4'>
+          <div class='card text-bg-light'>
+            <div class='card-header text-bg-dark'>
+              {{title}}
+              {{#if isTop}}
+                <span
+                  class='badge text-bg-danger rouded-pill text-capitalize'
+                >
+                  Trand
+                </span>{{/if}}
+              {{#if isNew}}
+                <span
+                  class='badge text-bg-success rounded-pill text-capitalize'
+                >
+                  New
+                </span>{{/if}}
+            </div>
+
+            <div class='card-body text-bg-dark text-center'>
+              <p class='card-title'>{{description}}</p>
+            </div>
+
+          </div>
+        </div>
+      {{/each}}
+    {{/with}}
+  </div> --}}
+
+  <div class='m-3'>
+    <div class='display-2'>{{newsBlock.title}}</div>
+  </div>
+  <div class='row g-1'>
+    {{#each newsBlock.cards}}
+      <section class='col-6'>
+        <div class='card text-bg-dark text-light'>
+          <div class='card-header text'>
+            {{title}}
+            {{#if isTop}}
+              <span
+                class='badge text-bg-danger rouded-pill text-capitalize'
+              >
+                Trand
+              </span>{{/if}}
+            {{#if isNew}}
+              <span
+                class='badge text-bg-success rounded-pill text-capitalize'
+              >
+                New
+              </span>{{/if}}
+          </div>
+          <div class='card-body'>
+            <p class='card-text'>{{description}}</p>
+          </div>
+        </div>
+      </section>
+    {{/each}}
+  </div>
+  <br />
+
+  <div class='row g-4'>
+    <div class='col-12'>
+      <div class='nav nav-tabs'>
+        {{#each goodsBlock.tabs}}
+          <div class='nav-item'>
+            {{#if isActive}}
+              <button
+                class='nav nav-link active'
+              >{{text}}</button>
+            {{else}}
+              {{#if isDisabled}}
+                <button
+                  class='nav nav-link disabled'
+                >{{text}}</button>
+              {{else}}
+                <button
+                  class='nav nav-link'
+                >{{text}}</button>
+              {{/if}}
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <div class='row g-3'>
+    {{#each goodsBlock.cards}}
+      <section class='col-6'>
+        <div class='card text-bg-light text-dark'>
+          <div class='card-header img pe-5'>
+            <img class='pe-5' src='{{image}}' />
+            {{#if isHot}}
+              <span
+                class='badge text-bg-danger rouded-pill text-capitalize'
+              >
+                Hote
+              </span>
+              {{#if isNew}}
+                <span
+                  class='badge text-bg-info rouded-pill text-capitalize'
+                >
+                  New
+                </span>
+              {{else}}
+              {{/if}}
+            {{/if}}
+          </div>
+          <div class='card-body'>
+            <h1>{{title}}</h1>
+            <p>{{description}}</p>
+          </div>
+        </div>
+      </section>
+    {{/each}}
+  </div>
+  <br />
+
+  <div class='row-5'>
+    <section class='col-12'>
+      <div class='nav nav-tabs'>
+        <div class='card text-bg-dark'>
+          <div class='nav'>
+            <h2>{{subscribe.header}}</h2>
+            <p>{{subscribe.description}}</p>
+            <div class='content-end'>
+              <button class='nav nav-link pe-4'>Register Now</button>
+            </div>
+            <div class='content-end'>
+              <button class='nav nav-link'>Buy SB</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <br />
+
+  <div class='row-5'>
+    <div class='card text-bg-success text-center'>
+      <h1 class='text-uppercase'>{{service.title}}</h1>
+      <p>{{service.description}}</p>
+        {{#each service.buttons}}
+        <div class="card-body">
+        <button class=' btn btn-info'>{{text}}</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+  {{!-- {{#each shophome.footer}}
+    <div class='col-12 p-5'>
+      <div class='card'>
+        <div class='nav flex-column'>
+          <div class='nav-item mb-2'>
+            <div class='card'>
+              <a
+                href='{{link}}'
+                class='nav-link'
+              >{{text}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  <br /> --}}
+
+  <div class="row g-5">
+
+        {{#each footer}}
+
+      <div class="col-2">
+        <ul class="nav flex-column ">
+
+            {{#each this}}
+            <li>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+            </li>
+            {{/each}}
+
+        </ul>
+      </div>
+
+        {{/each}}
+
+    </div>
+</main>

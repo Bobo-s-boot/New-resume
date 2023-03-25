@@ -46,36 +46,31 @@
     {{/with}}
   </div> --}}
 
-  <div class='m-3'>
-    <div class='display-2'>{{newsBlock.title}}</div>
-  </div>
-  <div class='row g-1'>
-    {{#each newsBlock.cards}}
-      <section class='col-6'>
-        <div class='card text-bg-dark text-light'>
-          <div class='card-header text'>
-            {{title}}
-            {{#if isTop}}
-              <span
-                class='badge text-bg-danger rouded-pill text-capitalize'
-              >
-                Trand
-              </span>{{/if}}
-            {{#if isNew}}
-              <span
-                class='badge text-bg-success rounded-pill text-capitalize'
-              >
-                New
-              </span>{{/if}}
-          </div>
-          <div class='card-body'>
-            <p class='card-text'>{{description}}</p>
-          </div>
+ <div class='m-3'>
+  <div class='display-2'>{{newsBlock.title}}</div>
+</div>
+<div class='row g-1'>
+  {{#each newsBlock.cards}}
+    <section class='col-3'>
+      <div class='card text-bg-dark text-light'>
+        <div class='card-header text'>
+          {{title}}
+          {{#if isTop}}
+            <span class='badge text-bg-danger rounded-pill text-capitalize'>Trand</span>
+          {{/if}}
+          {{#if isNew}}
+            <span class='badge text-bg-success rounded-pill text-capitalize'>New</span>
+          {{/if}}
         </div>
-      </section>
-    {{/each}}
-  </div>
-  <br />
+        <div class='card-body'>
+          <p class='card-text'>{{description}}</p>
+        </div>
+      </div>
+    </section>
+  {{/each}}
+</div>
+<br />
+
 
   <div class='row g-4'>
     <div class='col-12'>
@@ -106,10 +101,10 @@
 
   <div class='row'>
     {{#each goodsBlock.cards}}
-      <section class='col-6'>
+      <section class='col-4'>
         <div class='card text-bg-light text-dark'>
           <div class='card-header img pe-5'>
-            <img class='pe-5' src='{{image}}' />
+            <img class='pe-5'  width="200"  src='{{image}}' />
             {{#if isHot}}
               <span
                 class='badge text-bg-danger rouded-pill text-capitalize'

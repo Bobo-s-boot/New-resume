@@ -1,3 +1,13 @@
 html {
   max-width: 720px;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-item {
+  padding: 10px;
+}
+

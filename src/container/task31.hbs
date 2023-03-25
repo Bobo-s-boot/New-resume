@@ -128,20 +128,18 @@
        {{/with}}
          <br>
 
-       {{#with gallery}}
-         <h2>{{title}}</h2>
-          {{#each cards}}
-          <div class="card">
-          <div class="card-header">
-            {{name}}
-          </div>
-          <div class="card-body">
-           <div>{{items}}</div>
-            </div>
-          </div>
-          {{/each}}
-       {{/with}}
-         <br>
+       <div class="grid-container">
+  {{#each gallery.cards}}
+    <div class="grid-item">
+      <div class="card">
+        <div class="card-header">{{this.name}}</div>
+        <div class="card-body">{{this.items}}</div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+
 
        {{#with relaxion}}
   <div class="display-3">{{title}}</div>

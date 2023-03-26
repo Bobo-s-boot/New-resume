@@ -1,0 +1,20 @@
+<header>
+  <div class='card row'>
+    <div class='pt-1'>
+      <h1 class='display-4'>Logo</h1>
+    </div>
+    <div class='col-12 nav nav-tabs justify-content-end'>
+      <div class='d-flex justify-content-end'>
+        {{#with navigation}}
+          {{#each links}}
+            <a
+              href='{{href}}'
+              class='ml-auto'
+            >{{text}}</a>&nbsp;&nbsp;
+          {{/each}}
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <br />
+</header>

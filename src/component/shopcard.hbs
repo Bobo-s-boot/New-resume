@@ -1,0 +1,43 @@
+{{#with goodsOtherBlock}}
+  <h1 class='text-center'>{{title}}</h1>
+  <br />
+  <div class='row display-flex'>
+    {{#each cards}}
+      <div class='col-lg-4'>
+        <div class='card'>
+          <div class='card-header'>
+            <img src='{{image}}' width='150' />
+          </div>
+          <div class='card-body'>
+            <h6>{{title}}</h6>
+            <br />
+            <p>{{description}}</p>
+            {{#if @first}}
+              {{#if isHot}}
+                <span
+                  class='badge text-bg-info rounded-pill text-capitalize'
+                >{{isHot}}</span>
+              {{else}}
+                <span
+                  class='badge text-bg-warning rounded-pill text-capitalize'
+                >{{idNew}}</span>
+              {{/if}}
+            {{/if}}
+            {{#if @first}}
+              {{#if isHot}}
+                <span
+                  class='badge text-bg-info rounded-pill text-capitalize'
+                >{{isHot}}</span>
+              {{else}}
+                <span
+                  class='badge text-bg-danger rounded-pill text-capitalize'
+                >{{idNew}}</span>
+              {{/if}}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{/with}}
+<br />

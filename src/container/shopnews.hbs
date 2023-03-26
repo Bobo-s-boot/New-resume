@@ -1,0 +1,73 @@
+<main>
+  <div class='col-7'>
+    <div class='row'>
+      <div class='col-12 mb-5'>
+        {{#each breadcrumb}}
+          <a href='{{url}}'>{{name}}</a>{{#unless
+            @last
+          }}/{{/unless}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  {{#with newsData}}
+    <div class='col-12'>
+      <div class='row'>
+        <div class='card'>
+          <img
+            src='{{photo}} '
+            style='max-width:100%; height:auto;'
+          />
+        </div>
+        {{#with head}}
+          <h1 class='display-5'>{{heading}}</h1>
+          <p>{{description}}</p>
+        {{/with}}
+        {{#each body}}
+          <h1 class='display-5'>{{this.title}}</h1>
+          <p>{{this.text}}</p>
+        {{/each}}
+      </div>
+    </div>
+  {{/with}}
+
+  <div class='row'>
+    {{#with newsOtherBlock}}
+      <h1 class='text-center'>{{title}}</h1>
+      {{#each cards}}
+        <section class='col-3'>
+          <div class='card text-bg-dark px-2'>
+            <div class='card-header'>
+              <h1>{{title}}</h1>
+              {{#if @first}}
+                {{#if isTop}}
+                  <span
+                    class='badge text-bg-info rounded-pill text-capitalize'
+                  >{{isTop}}</span>
+                {{else}}
+                  <span
+                    class='badge text-bg-info rounded-pill text-capitalize'
+                  >{{isTop}}</span>
+                {{/if}}
+                {{#if idNew}}
+                  <span
+                    class='badge text-bg-success rounded-pill text-capitalize'
+                  >{{idNew}}</span>
+                {{else}}
+                  <span
+                    class='badge text-bg-success rounded-pill text-capitalize'
+                  >{{idNew}}</span>
+                {{/if}}
+              {{/if}}
+            </div>
+            <div class='card-body'>
+              <p>{{description}}</p>
+            </div>
+          </div>
+        </section>
+      {{/each}}
+    {{/with}}
+  </div>
+  <br />
+</main>

@@ -1,0 +1,58 @@
+{{#each goodsBlock}}
+  <div class='row'>
+    <div class='card'>
+      <div class='col-12'>
+        <div class='row'>
+          <div class='col-12 col-md-6'>
+            <div class='row'>
+              <div class='col-12'>
+                <img src='{{image}}' class='w-100' />
+              </div>
+            </div>
+          </div>
+          <div class='col-12 col-md-6'>
+            <div class='row'>
+              <div class='col'>
+                <h3>{{name}}</h3>
+                <p>{{description}}</p>
+              </div>
+              <div class='col'>
+                <div class='row'>
+                  <div class='col'>
+                    <div class='row'>
+                      <div class='col-6'>
+                        <p>{{price.title}}</p>
+                      </div>
+                      <div class='col-6'>
+                        <h2>{{price.value}}</h2>
+                      </div>
+                    </div>
+                    <div class='row'>
+                      <div class='col-8 text-end'>
+                        {{amount}}
+                      </div>
+                      <div class='col-6'>
+                        {{#each buttons}}
+                          {{#if isPrimary}}
+                            <button
+                              class='btn btn-info'
+                            >{{text}}</button>
+                          {{/if}}
+                          {{#if isDanger}}
+                            <button
+                              class='btn btn-outline-danger'
+                            >{{text}}</button>
+                          {{/if}}
+                        {{/each}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}

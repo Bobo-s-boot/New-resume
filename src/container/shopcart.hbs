@@ -53,7 +53,14 @@
                         <div class='col-8 text-end'>
                           {{amount}}
                         </div>
-                        <div class='col-6'>
+                        <div class='col-4'>
+                          <ul>
+                            {{#each listItems}}
+                              <li>{{this}}</li>
+                            {{/each}}
+                          </ul>
+                        </div>
+                        <div class='col-12'>
                           {{#each buttons}}
                             {{#if isPrimary}}
                               <button
@@ -78,6 +85,7 @@
       </div>
     </div>
   {{/each}}
+
   <br />
   <hr />
 

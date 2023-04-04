@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{header}}</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>{{header}}</h1>
+      </header>
+      {{#with purchase}}
+        <div class='nav nav-tabs'>
+          {{#each tabs}}
+            <div class='row'>
+              <div class='col-12'>
+                <div class='nav-item'>
+                  <button type='button' class='nav nav-link {{#unless @index}}active{{/unless}}'>{{this}}</button>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        <br>
+      
+        {{#with actionBlock}}
+        <div class='row'>
+        <div class='col-6'>
+         <input class='form-control' value='{{input.placeholder}}'/>
+         </div>
+       <div class="col-12 text-end">
+         {{#each buttons}}
+        {{#if isSuccess}}<a href="{{link}}"><button class="btn btn-outline-success">{{text}}</button></a>{{/if}}
+        {{#if isOutline }}<a href="{{link}}"><button class="btn btn-success">{{text}}</button></a>{{/if}}
+         {{#if isDanger}}<a href="{{link}}"><button class="btn btn-danger">{{text}}</button></a>{{/if}}
+         {{/each}}
+          </div>
+         </div>
+        {{/with}}
+         <hr>
+
+     {{#each itemList}}
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h6>{{number}}</h6>
+      <div class="d-flex justify-content-between">
+        <div class="display-6">{{status}}</div>
+        <div class="pt-auto">
+          <div>{{amount.title}}</div>
+          <div>{{amount.value}}</div>
+        </div>
+        <div class="card">
+          {{#if @first}}
+        <img src="{{images}}">{{/if}}
+        <div class="card">
+        {{#if @index}} <img src="{{images}}">{{/if}}
+        </div>
+        </div>
+        <a href="{{button.link}}"><button class="btn btn-primary">{{button.text}}</button></a>
+      </div>
+    </li>
+  </ul>
+{{/each}}
+<hr>
+  {{/with}}
+
+
+  {{#with userInfo}}
+   <h1>{{title}}</h1>
+<div class="card">
+  <ul class="list-group"> 
+    <li class="list-group-item">
+      <h5>{{profileData.title}}</h5>
+      <br>
+      <div class="row">
+        <div class="col">
+          <label>{{profileData.fullName.surname.title}}</label>
+          <div>{{profileData.fullName.surname.value}}</div>
+        </div>
+        <div class="col">
+          <label>{{profileData.fullName.name.title}}</label>
+          <div>{{profileData.fullName.name.value}}</div>
+        </div>
+        <div class="col">
+          <label>{{profileData.fullName.middleName.title}}</label>
+          <div>{{profileData.fullName.middleName.value}}</div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <label>{{profileData.otherInfo.birthday.title}}:</label>
+          <div>{{profileData.otherInfo.birthday.value}}</div>
+        </div>
+        <div class="col">
+          <label>{{profileData.otherInfo.sex.title}}:</label>
+          <div>{{profileData.otherInfo.sex.value}}</div>
+        </div>
+        <div class="col">
+          <label>{{profileData.otherInfo.language.title}}:</label>
+          <div>{{profileData.otherInfo.language.value}}</div>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col ps-4">
+        {{#each buttons}}
+         {{#if isPrimary}} <button class="btn btn-primary">{{text}}</button>{{/if}}
+         {{#if isSecondary}} <button class="btn btn-secondary">{{text}}</button>  {{/if}}
+         {{#if isDanger}} <button class="btn btn-danger">{{text}}</button>  {{/if}}
+        {{/each}}
+       </div>
+      </div>
+    </li>
+  </ul>
+</div>
+    <br>
+
+    {{#with recipients}}
+
+   <div class="card">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h5>{{title}}</h5>
+      <br>
+      <div class="row">
+        <div class="col">
+          <p><strong>Ім'я</strong></p>
+        </div>
+        <div class="col">
+          <p><strong>Номер телефону</strong></p>
+        </div>
+      </div>
+      {{#each users}}
+      <div class="row">
+        <div class="col">
+          <p>{{name}}</p>
+        </div>
+        <div class="col">
+          <p>{{phone}}</p>
+        </div>
+      </div>
+      {{#with button}}
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-info">{{text}}</button>
+        </div>
+      </div>
+      {{/with}}
+      {{/each}}
+    </li>
+  </ul>
+</div> 
+   {{/with}} 
+    <br>
+
+   {{#with contacts}}
+  <div class="card">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h5>{{title}}</h5>
+        <br>
+        {{#with contactData}}
+          <div>
+            <label>{{phone.title}}</label>
+            <span>{{phone.value}}</span>
+          </div>
+          <div>
+            <label>{{additionalPhone.title}}</label>
+            <span>{{additionalPhone.value}}</span>
+          </div>
+          <div>
+            <label>{{email.title}}</label>
+            <span>{{email.value}}</span>
+          </div>
+        {{/with}}
+        {{#each buttons}}
+           {{#if isPrimary}} <button class="btn btn-primary">{{text}}</button>{{/if}}
+           {{#if isSecondary}} <button class="btn btn-secondary">{{text}}</button>{{/if}}
+           {{#if isDanger}} <button class="btn btn-danger">{{text}}</button>{{/if}}
+          {{/each}}
+      </li>
+    </ul>
+  </div>
+{{/with}}
+
+
+  {{/with}}
+
+
+    </main>
+  </body>
+</html>

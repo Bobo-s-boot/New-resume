@@ -1,0 +1,25 @@
+{{#each itemList}}
+  <ul class='list-group'>
+    <li class='list-group-item'>
+      <h6>{{number}}</h6>
+      <div class='d-flex justify-content-between'>
+        <div class='display-6'>{{status}}</div>
+        <div class='pt-auto'>
+          <div>{{amount.title}}</div>
+          <div>{{amount.value}}</div>
+        </div>
+        <div class='card'>
+          {{#if @first}}
+            <img src='{{images}}' />{{/if}}
+          <div class='card'>
+            {{#if @index}} <img src='{{images}}' />{{/if}}
+          </div>
+        </div>
+        <a href='{{button.link}}'><button
+            class='btn btn-primary'
+          >{{button.text}}</button></a>
+      </div>
+    </li>
+  </ul>
+{{/each}}
+<hr />

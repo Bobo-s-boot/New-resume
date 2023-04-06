@@ -1,0 +1,136 @@
+<html>
+  <main>
+    {{#with formBlock}}
+      <h1>{{header}}</h1>
+      {{#with rating}}
+        <div>{{title}}:
+          {{value}}
+        </div>
+      {{/with}}
+      {{#with actionBlock}}
+        <div class='nav nav-tabs'>
+          {{#each tabs}}
+            <div class='row'>
+              <div class='col-12'>
+                <div class='nav-item'>
+                <button class="nav nav-link {{#if isActive}}active{{/if}}">{{text}}</button>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        <br>
+        <br>
+        <hr>
+      {{#with report}}
+     <ul class="list-group">
+      <li class="list-group-item">
+        <h5>{{title}}</h5>
+        <button class="btn btn-primary">{{button.text}}</button>
+      </li>
+     </ul>
+     <hr>
+     {{/with}}
+     {{/with}}
+      {{!-- 😄😄😄 --}}
+       {{#with feedbackBlock}}
+         <div class="row">
+         <div class="col">
+           <h2>{{title}}</h2>
+         {{#each buttons}}
+          {{#if isWarning}} <button class="btn btn-warning">{{text}}</button>{{/if}}
+          {{#if isSuccess}} <button class="btn btn-success">{{text}}</button>{{/if}}
+          {{#if isDanger}} <button class="btn btn-danger">{{text}}</button>{{/if}}
+         {{/each}}
+         </div>
+         </div>
+        {{/with}}
+        <br>
+        <hr>
+        {{!-- 😄😄😄 --}}
+        {{#with goodsInfo}}
+  <div class="row justify-content-end">
+  <div class="card col-4">
+    <img src="{{photo}}">
+    <div>{{name}}</div>
+  </div>
+  <div class="card col-4">
+    <div class="card-body">
+      <div class="display-6">
+        {{price}}
+      </div>
+      <div>Є у наявності</div>
+      <br>
+      <div>
+        {{#each buttons}}
+          {{#if isPrimary}}
+            <button class="btn btn-primary">{{text}}</button><br>
+          {{/if}}
+          {{#if isSecondary}}
+            <button class="btn btn-secondary">{{text}}</button><br>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+ <br>
+ 
+ {{#with seller}}
+  <div class="row justify-content-end">
+  <div class="card col-4">
+    <div>{{title}}:</div><div><strong>{{value}}</strong></div>
+  </div>
+  </div>
+{{/with}}
+
+{{/with}} 
+{{/with}}
+<br>
+    {{#each reviewList}}
+     <div class="row">
+      <div class="card">
+        <div class="card">
+         <div class="card-header">
+          <div>{{title.userName}}</div>
+          <div>{{title.caption}}</div>
+          <div>{{title.date}}</div>     
+         </div>
+         <div>{{reviewBody.seller.title}}:{{reviewBody.seller.value}}</div>
+         <br>
+         <div>{{reviewBody.rating.title}}:{{reviewBody.rating.value}}</div>
+         <br>
+         <p>{{reviewBody.text}}</p>
+         <br>
+         <strong>{{reviewBody.advantages.title}}:</strong>
+         <div>{{reviewBody.advantages.text}}</div>
+         <br>
+         <strong>{{reviewBody.disadvantages.title}}:</strong>
+         <div>{{reviewBody.disadvantages.text}}</div>
+         <br>
+         <p>
+          <div class="card">
+          <div class="col">
+          <img src="{{reviewBody.images}}">
+          <img src="{{reviewBody.images}}">
+          <img src="{{reviewBody.images}}">
+          </div>
+          </div>
+         </p>
+        </div>
+        <br>
+           {{#each reviewBody.coments}}
+           <ul class="list-group">
+          <li class="list-group-item">
+              <div>{{userName}}</div>
+              <div>{{date}}</div>
+              <p>{{text}}</p>
+              </li>
+              </ul>
+           {{/each}}
+           </div>
+      </div>
+    {{/each}}
+      <br>
+  </main>
+</html>

@@ -32,8 +32,11 @@
      <hr>
      {{/with}}
      {{/with}}
-      {{!-- 😄😄😄 --}}
-       {{#with feedbackBlock}}
+
+ 
+      <div class="row">
+        <div class="col-sm d-flex align-items-center">
+         {{#with feedbackBlock}}
          <div class="row">
          <div class="col">
            <h2>{{title}}</h2>
@@ -45,16 +48,16 @@
          </div>
          </div>
         {{/with}}
-        <br>
-        <hr>
-        {{!-- 😄😄😄 --}}
-        {{#with goodsInfo}}
+        </div>
+        <div class="col-sm">
+           {{#with goodsInfo}}
   <div class="row justify-content-end">
   <div class="card col-4">
     <img src="{{photo}}">
     <div>{{name}}</div>
   </div>
-  <div class="card col-4">
+  <div class="row justify-content-end">
+   <div class="card col-4">
     <div class="card-body">
       <div class="display-6">
         {{price}}
@@ -73,6 +76,8 @@
       </div>
     </div>
   </div>
+  </div>
+  
 </div>
  <br>
  
@@ -86,6 +91,15 @@
 
 {{/with}} 
 {{/with}}
+        </div>
+      </div>
+      
+     
+      {{!-- 😄😄😄 --}}
+       
+        <br>
+        <hr>
+        {{!-- 😄😄😄 --}}
 <br>
     {{#each reviewList}}
      <div class="row">

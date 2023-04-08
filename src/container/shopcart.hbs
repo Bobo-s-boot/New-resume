@@ -44,13 +44,9 @@
                       <div class='row'>
                         <div class='col-6'>
                           <p>{{price.title}}</p>
-                        </div>
-                        <div class='col-6'>
                           <h2>{{price.value}}</h2>
                         </div>
-                      </div>
-                      <div class='row'>
-                        <div class='col-8 text-end'>
+                        <div class='col-sm'>
                           {{amount}}
                         </div>
                         <div class='col-4'>
@@ -60,13 +56,14 @@
                             {{/each}}
                           </ul>
                         </div>
-                        <div class='col-12'>
+                        <div class='col-sm text-end'>
                           {{#each buttons}}
                             {{#if isPrimary}}
                               <button
                                 class='btn btn-info'
                               >{{text}}</button>
                             {{/if}}
+                            <br />
                             {{#if isDanger}}
                               <button
                                 class='btn btn-outline-danger'

@@ -27,7 +27,7 @@
         <div class='col-6'>
          <input class='form-control' value='{{input.placeholder}}'/>
          </div>
-       <div class="col-12 text-end">
+         <div class="col-sm">
          {{#each buttons}}
         {{#if isSuccess}}<a href="{{link}}"><button class="btn btn-outline-success">{{text}}</button></a>{{/if}}
         {{#if isOutline }}<a href="{{link}}"><button class="btn btn-success">{{text}}</button></a>{{/if}}
@@ -90,24 +90,24 @@
         <div class="col">
           <label>{{profileData.otherInfo.birthday.title}}:</label>
           <div>{{profileData.otherInfo.birthday.value}}</div>
+           {{#each buttons}}
+          {{#if isPrimary}} <button class="btn btn-primary">{{text}}</button>{{/if}}
+          {{/each}}
         </div>
         <div class="col">
           <label>{{profileData.otherInfo.sex.title}}:</label>
           <div>{{profileData.otherInfo.sex.value}}</div>
+          {{#each buttons}}
+          {{#if isSecondary}} <button class="btn btn-outline-secondary">{{text}}</button>  {{/if}}
+          {{/each}}
         </div>
         <div class="col">
           <label>{{profileData.otherInfo.language.title}}:</label>
           <div>{{profileData.otherInfo.language.value}}</div>
-        </div>
-      </div>
-      <div class="row">
-       <div class="col ps-4">
-        {{#each buttons}}
-         {{#if isPrimary}} <button class="btn btn-primary">{{text}}</button>{{/if}}
-         {{#if isSecondary}} <button class="btn btn-secondary">{{text}}</button>  {{/if}}
-         {{#if isDanger}} <button class="btn btn-danger">{{text}}</button>  {{/if}}
+          {{#each buttons}}
+         {{#if isDanger}} <button class="btn btn-outline-danger">{{text}}</button>  {{/if}}
         {{/each}}
-       </div>
+        </div>
       </div>
     </li>
   </ul>
@@ -121,31 +121,17 @@
     <li class="list-group-item">
       <h5>{{title}}</h5>
       <br>
-      <div class="row">
-        <div class="col">
-          <p><strong>Ім'я</strong></p>
-        </div>
-        <div class="col">
-          <p><strong>Номер телефону</strong></p>
-        </div>
-      </div>
-      {{#each users}}
-      <div class="row">
-        <div class="col">
-          <p>{{name}}</p>
-        </div>
-        <div class="col">
-          <p>{{phone}}</p>
-        </div>
-      </div>
-      {{#with button}}
-      <div class="row">
-        <div class="col">
-          <button class="btn btn-info">{{text}}</button>
-        </div>
-      </div>
-      {{/with}}
+        <div class="row">
+          {{#each users}}
+          <div class="col-sm">
+          <p>{{name}}:</p>
+           <div>{{phone}}</div>
+           <div class="col-sm">
+          <button class="btn btn-info">{{button.text}}</button>
+          </div>
+           </div>
       {{/each}}
+      </div>
     </li>
   </ul>
 </div> 
@@ -159,28 +145,35 @@
         <h5>{{title}}</h5>
         <br>
         {{#with contactData}}
-          <div>
+        <div class="row">
+          <div class="col-sm">
             <label>{{phone.title}}</label>
             <span>{{phone.value}}</span>
+             <div class="col-sm">
+              <button class="btn btn-primary">Редагувати</button>
+           </div>
           </div>
-          <div>
+          <div class="col-sm">
             <label>{{additionalPhone.title}}</label>
             <span>{{additionalPhone.value}}</span>
+               <div class="col-sm">
+              <button class="btn btn-outline-secondary">Очистити</button>
+              </div>
           </div>
-          <div>
+          <div class="col-sm">
             <label>{{email.title}}</label>
             <span>{{email.value}}</span>
+             <div class="col-sm">
+              <button class="btn btn-outline-danger">Видалити</button>
+              </div>
           </div>
         {{/with}}
-        {{#each buttons}}
-           {{#if isPrimary}} <button class="btn btn-primary">{{text}}</button>{{/if}}
-           {{#if isSecondary}} <button class="btn btn-secondary">{{text}}</button>{{/if}}
-           {{#if isDanger}} <button class="btn btn-danger">{{text}}</button>{{/if}}
-          {{/each}}
+        </div>
       </li>
     </ul>
   </div>
 {{/with}}
+
 
 
   {{/with}}
